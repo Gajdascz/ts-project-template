@@ -1,0 +1,5 @@
+echo "prepare-commit-msg args: $1 $2 $3" >> /tmp/husky-debug.log
+if [ "$2" = "amend" ]; then
+  exit 0
+fi
+exec < /dev/tty && pnpm cz --hook || true

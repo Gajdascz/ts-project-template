@@ -1,0 +1,60 @@
+name: Prerelease
+description: Push to main -> runs tests + may create Version PR
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  prerelease:
+    name: pre-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: "10.13.1"
+
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: https://registry.npmjs.org/
+          cache: pnpm
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🕵️ Validating Dependencies
+        run: pnpm depcruiser-utils validate
+
+      - name: 🔨 Build
+        run: pnpm build
+
+      - name: 🧹 Format and lint check
+        run: |-
+          pnpm prettier --check .
+          pnpm eslint .
+
+      - name: 🧪 Run tests
+        run: pnpm test
+
+      - name: 🧮 Dry-run publish
+        run: pnpm changeset publish --dry-run
+          --registry=https://registry.npmjs.org/
+
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: "dist"
+
+      - name: 📝 Create Version PR (Changesets)
+        uses: changesets/action@v1
+        with:
+          branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

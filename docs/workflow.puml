@@ -1,0 +1,74 @@
+@startuml Workflow
+
+legend top left
+| <#lightblue>   lightblue      | Standard dev action       |
+| <#yellow>   yellow            | Triggers                  |
+| <#orange>   orange            | Conditions                |
+| <#lightgreen>   lightgreen    | Success outcomes/Admin Op |
+| <#lightcoral>   lightcoral    | Errors/failures           |
+| <#plum>   plum                | Automation                |
+end legend
+
+
+
+
+#lightblue:`git checkout -b <dev/feat-branch>`;
+while (Changes Published?) is (no)
+  #lightblue:Make Changes;
+  #lightblue:`pnpm cm <file/dir file/dir...> (AND/OR) --changeset`;
+  #yellow:(script) ./bin/commit.ts;
+  #orange:if(file/dirs found (AND/OR) --changeset?) then (yes)
+    #yellow:if (--changeset?) then (yes)
+      #plum:(script) `pnpm changeset`;
+      #lightblue:Complete changeset prompts;
+      #plum:(script) `git add .changeset`;
+    endif
+    #plum:(script) `git add <file/dir file/dir...>`;
+    #plum:(script) `git commit`;
+    #plum:(husky:pre-commit) lint-staged;
+    #plum:(husky:prepare-commit-msg) init commitizen;
+    #lightblue:complete commitizen prompts;
+    #yellow:(husky:commit-msg) commitlint;
+    #orange:if(successful?) then (yes)
+      #lightgreen:Changes Committed;
+      #orange:if(Publishing && !--changeset?) then (yes)
+        #lightblue: `pnpm changeset`;
+        #lightblue: Complete changeset prompts;
+      else (no)
+      endif
+      #lightblue:git push origin <dev/feat-branch>;
+      #yellow:(husky:pre-push) `pnpm check`;
+      #orange:if(Check Valid) then (yes)
+        #lightgreen:Pushed to origin <dev/feat-branch>;
+            #orange:if(PR Review Approved?) then (yes)
+              #lightgreen:Merge PR;
+              #plum:(GitHub Actions) Pre-Release Workflow Initiated;
+              #plum:(GitHub Actions) Changeset Action Initiated;
+              #plum:(GitHub Actions) Changeset Branch + PR Created;
+              #lightgreen:Merge Changeset Branch;
+              #plum:(GitHub Actions) Release Workflow Initiated;
+              #plum:(GitHub Actions) Publish to NPM;
+              #orange:if(Release Successful?) then (yes)
+                #lightgreen:Complete;
+              else (no)
+                #lightcoral:Troubleshoot;
+              endif            
+            else (no)
+              #lightcoral: PR denied;
+              #lightblue: Fix Based on Review; 
+            endif
+      else (no)
+        #lightcoral:Debug;
+      endif
+    else (no)
+      #lightcoral:Changes Not Committed;
+    endif 
+  else (no)
+    #lightcoral:provided files not found;
+  endif
+endwhile 
+#lightgreen: Changeset & feat/dev branch deleted;
+end
+
+@enduml
+

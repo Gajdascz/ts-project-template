@@ -1,0 +1,74 @@
+{
+  "name": "",
+  "private": true,
+  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajdascz"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Nolan Gajdascz",
+    "email": "dev.gajdascz@gmail.com",
+    "url": "https://github.com/gajdascz"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cz-commitlint": "^19.8.1",
+    "@commitlint/types": "^19.8.1",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.31.0",
+    "@microsoft/tsdoc-config": "^0.17.1",
+    "@types/node": "^22.16.4",
+    "@vitest/coverage-v8": "3.0.9",
+    "@vitest/ui": "3.1.2",
+    "commitizen": "^4.3.1",
+    "dependency-cruiser": "^16.10.4",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "lint-staged": "^15.5.2",
+    "memfs": "^4.17.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "vitest": "^3.2.4",
+    "depcruiser-utils": "file:depcruiser-utils-0.1.0.tgz"
+  },
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm clean:code"
+    ]
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "cruise:validate": "pnpm depcruiser-utils validate",
+    "write:coverage-report": "vitest --coverage.reportsDirectory=./docs/coverage --coverage.reporter=html",
+    "write:docs": "pnpm run write:coverage-report && pnpm depcruiser-utils graph",
+    "format": "prettier .",
+    "lint": "eslint .",
+    "clean:code": "pnpm eslint . --fix && pnpm prettier . --write ",
+    "typecheck": "tsc --noEmit",
+    "check:code": "pnpm typecheck && pnpm run cruise:validate && pnpm test",
+    "lint-staged": "lint-staged",
+    "prepare": "husky",
+    "cm": "pnpm tsx ./bin/commit.ts",
+    "cm:cs": "pnpm cm --changeset",
+    "cm:a": "pnpm cm --amend"
+  }
+}

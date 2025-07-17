@@ -1,0 +1,103 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, README.md, ${capture}.*.ts, _${capture}.*.ts, __${capture}.*.ts,${capture}.md",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.d.ts.map, .tsbuildinfo",
+    "package.json": ".*, *.json, *.yaml, *config, *config.js,*config.cjs,LICENSE,*.ts,*.md",
+    "index.*": "*",
+    "modules.ts": "*.ts"
+  },
+  "explorer.incrementalNaming": "smart",
+  "explorer.sortOrder": "type",
+
+  "better-comments.multilineComments": true,
+  "better-comments.tags": [
+    {
+      "tag": "#region>",
+      "color": "#31EA56",
+      "strikethrough": false,
+      "underline": true,
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "#endregion",
+      "color": "#195226",
+      "strikethrough": false,
+      "underline": false,
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": "!",
+      "color": "#ff3333",
+      "backgroundColor": "transparent",
+      "bold": false,
+      "multilineComments": false
+    },
+    {
+      "tag": "- !",
+      "color": "#ff3333",
+      "backgroundColor": "transparent",
+      "bold": false,
+      "multilineComments": false
+    },
+    {
+      "tag": "@deprecated",
+      "color": "#ff3333",
+      "backgroundColor": "transparent",
+      "bold": false,
+      "multilineComments": true
+    },
+    {
+      "tag": "@important",
+      "color": "#00ddFF",
+      "backgroundColor": "transparent",
+      "bold": true,
+      "underline": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "x--",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  "prettier.requireConfig": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.configPath": "./.prettier.cjs",
+  "eslint.useFlatConfig": true,
+
+  "cSpell.words": [
+    "depcruise",
+    "depcruiser",
+    "depgraph",
+    "oddify",
+    "outpipe",
+    "paren",
+    "parens"
+  ]
+}

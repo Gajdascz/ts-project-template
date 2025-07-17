@@ -1,0 +1,17 @@
+module.exports = {
+  pluginSearchDirs: ["."],
+  arrowParens: "always",
+  endOfLine: "lf",
+  jsxSingleQuote: true,
+  printWidth: 80,
+  proseWrap: "always",
+  quoteProps: "as-needed",
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: "none",
+  useTabs: false,
+  experimentalTernaries: true,
+  experimentalOperatorPosition: "start",
+  objectWrap: "collapse",
+};

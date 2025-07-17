@@ -1,0 +1,13 @@
+**/node_modules
+**/build
+**/dist
+**/coverage
+**/.coverage
+**/.cache
+**/*.tsbuildinfo
+**/package-lock.json
+.pnpm-store
+*.log
+.env
+.env.*
+docs/dependencies
