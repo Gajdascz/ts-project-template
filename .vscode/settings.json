@@ -4,8 +4,7 @@
     "*.ts": "${capture}.js, README.md, ${capture}.*.ts, _${capture}.*.ts, __${capture}.*.ts,${capture}.md",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.d.ts.map, .tsbuildinfo",
     "package.json": ".*, *.json, *.yaml, *config, *config.js,*config.cjs,LICENSE,*.ts,*.md",
-    "index.*": "*",
-    "modules.ts": "*.ts"
+    "index.*": "*"
   },
   "explorer.incrementalNaming": "smart",
   "explorer.sortOrder": "type",
@@ -88,7 +87,8 @@
 
   "prettier.requireConfig": true,
   "prettier.prettierPath": "./node_modules/prettier",
-  "prettier.configPath": "./.prettier.cjs",
+
+  "prettier.configPath": "./prettier.config.cjs",
   "eslint.useFlatConfig": true,
 
   "cSpell.words": [

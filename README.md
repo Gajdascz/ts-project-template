@@ -24,7 +24,7 @@ workflows and strict code quality.
     dry-run publish) and release (publish to npm).
 - **Code Quality:**
   - [ESLint](eslint.config.ts) with strict and relaxed rulesets.
-  - [Prettier](.prettier.cjs) for consistent formatting.
+  - [Prettier](prettier.config.cjs) for consistent formatting.
   - [lint-staged](package.json) and [Husky](.husky/) for pre-commit and pre-push
     checks.
 - **Testing:**
@@ -238,7 +238,7 @@ quality, and release tasks:
 
 ## License
 
-MIT – © 2025 [<<AUTHOR_NAME>>](<<AUTHOR_URL>>)
+MIT – © <<YEAR>> [<<AUTHOR_NAME>>](<<AUTHOR_URL>>)
 
 - [NPM](https://www.npmjs.com/)
 - [GitHub](https://github.com/)
