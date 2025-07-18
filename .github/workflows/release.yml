@@ -1,5 +1,4 @@
 name: Release
-description: Merge of Version PR to main -> publishes packages
 
 on:
   pull_request:

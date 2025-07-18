@@ -1,5 +1,4 @@
 name: Prerelease
-description: Push to main -> formats, lints, and runs tests + may create Version PR
 
 on:
   push:
@@ -8,6 +7,7 @@ on:
 jobs:
   prerelease:
     name: pre-release
+    if: ${{ !contains(github.event.head_commit.message, 'Initial commit') }} &&
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout code
