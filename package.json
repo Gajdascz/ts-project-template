@@ -1,11 +1,11 @@
 {
-  "name": "<<PROJECT_SNAKE>>",
+  "name": "<<PROJECT_NAME>>",
   "private": true,
   "description": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "github.com/<<AUTHOR_GH>>/<<PROJECT_SNAKE>>.git"
+    "url": "github.com/<<AUTHOR_GH>>/<<PROJECT_NAME>>.git"
   },
   "keywords": [],
   "author": {

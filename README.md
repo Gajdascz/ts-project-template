@@ -1,4 +1,4 @@
-# <<PROJECT_SNAKE>>
+# <<PROJECT_NAME>>
 
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -72,9 +72,9 @@ OR
 - Manually clone and link to Github
 
   ```sh
-  git clone https://github.com/<<AUTHOR_GH>>/<<PROJECT_SNAKE>>.git
-  cd <<PROJECT_SNAKE>>
-  git remote add origin git@github.com:<<AUTHOR_GH>>/<<PROJECT_SNAKE>>.git
+  git clone https://github.com/<<AUTHOR_GH>>/<<PROJECT_NAME>>.git
+  cd <<PROJECT_NAME>>
+  git remote add origin git@github.com:<<AUTHOR_GH>>/<<PROJECT_NAME>>.git
   git branch -M main
   git push -u origin main
   ```
@@ -91,7 +91,7 @@ OR
   - AUTHOR_URL (github.com/your_username)
   - AUTHOR_GH (your_username)
   - AUTHOR_EMAIL (your email)
-  - PROJECT_SNAKE (your project name)
+  - PROJECT_NAME (your project name)
   - YEAR (current year)
 - Push to origin main using [skip ci] in commit message.
 - Set your repository NPM_TOKEN for actions:
