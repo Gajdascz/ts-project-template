@@ -51,7 +51,7 @@
   },
   "lint-staged": {
     "*": [
-      "pnpm clean:code"
+      "pnpm clean"
     ]
   },
   "scripts": {
@@ -62,9 +62,9 @@
     "write:docs": "pnpm run write:coverage-report && pnpm depcruiser-utils graph",
     "format": "prettier .",
     "lint": "eslint .",
-    "clean:code": "pnpm eslint . --fix && pnpm prettier . --write ",
+    "clean": "pnpm eslint . --fix && pnpm prettier . --write",
     "typecheck": "tsc --noEmit",
-    "check:code": "pnpm typecheck && pnpm run cruise:validate && pnpm test",
+    "check": "pnpm typecheck && pnpm run cruise:validate && pnpm test",
     "lint-staged": "lint-staged",
     "prepare": "husky",
     "cm": "pnpm tsx ./bin/commit.ts",

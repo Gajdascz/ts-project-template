@@ -24,7 +24,7 @@ uses interactive prompts.
 ### Import
 
 ```ts
-import { fs, path, prompts, utils } from "./.dev/__mocks__/index";
+import { fs, path, prompts, utils } from './.dev/__mocks__/index';
 ```
 
 ### Mocking in Your Tests
@@ -35,29 +35,29 @@ imported.
 #### Example: Setting Up Files and Prompts
 
 ```ts
-utils.reset.fs({ "/foo.txt": "hello", "/bar/baz.txt": "world" });
+utils.reset.fs({ '/foo.txt': 'hello', '/bar/baz.txt': 'world' });
 
-utils.setup.prompts({ answer: "yes" });
+utils.setup.prompts({ answer: 'yes' });
 ```
 
 #### Example: Creating Files/Directories
 
 ```ts
-utils.create.file("/mydir/file.txt", "content");
-utils.create.dir("/anotherdir");
+utils.create.file('/mydir/file.txt', 'content');
+utils.create.dir('/anotherdir');
 ```
 
 #### Example: Reading Files
 
 ```ts
-const content = utils.read.sync.file("/foo.txt");
-const files = utils.read.sync.dir("/bar");
+const content = utils.read.sync.file('/foo.txt');
+const files = utils.read.sync.dir('/bar');
 ```
 
 #### Example: Checking File Existence
 
 ```ts
-const exists = utils.does.fileExists("/foo.txt");
+const exists = utils.does.fileExists('/foo.txt');
 ```
 
 #### Example: Resetting State Before/After Each Test
@@ -90,17 +90,17 @@ utils.beforeAfterEach();
 ## Example Test
 
 ```ts
-import { utils, fs, prompts } from "./.dev/__mocks__/index";
+import { utils, fs, prompts } from './.dev/__mocks__/index';
 
-describe("my module", () => {
+describe('my module', () => {
   utils.beforeAfterEach();
 
-  it("reads a file", () => {
-    utils.create.file("/test.txt", "data");
-    expect(fs.readFileSync("/test.txt", "utf-8")).toBe("data");
+  it('reads a file', () => {
+    utils.create.file('/test.txt', 'data');
+    expect(fs.readFileSync('/test.txt', 'utf-8')).toBe('data');
   });
 
-  it("mocks prompts", async () => {
+  it('mocks prompts', async () => {
     utils.setup.prompts({ answer: 42 });
     const result = await prompts();
     expect(result).toEqual({ answer: 42 });

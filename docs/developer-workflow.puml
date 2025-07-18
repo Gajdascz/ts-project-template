@@ -1,5 +1,7 @@
 @startuml Workflow
 
+title Developer Workflow
+
 legend top left
 | <#lightblue>   lightblue      | Standard dev action       |
 | <#yellow>   yellow            | Triggers                  |
@@ -10,11 +12,10 @@ legend top left
 end legend
 
 
-
-#lightblue:`git checkout -b <dev/feat-branch>`;
+#lightblue:`git checkout -b feat-branch`;
 while (Changes Published?) is (no)
   #lightblue:Make Changes;
-  #lightblue:`pnpm cm <file/dir file/dir...> (AND/OR) --changeset (AND/OR) --amend`;
+  #lightblue:`pnpm cm <file/dir file/dir...> (AND/OR) changeset (AND/OR) amend`;
   #yellow:(script) ./bin/commit.ts;
   #orange:if(file/dirs found (AND/OR) --changeset?) then (yes)
     #yellow:if (--changeset?) then (yes)

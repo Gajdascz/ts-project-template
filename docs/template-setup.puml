@@ -1,0 +1,36 @@
+@startuml Workflow
+
+title Template Setup
+
+group Get Template
+#lightgreen: PNPM & Node Installed;
+#lightblue: Click `Use this template` on GitHub (OR) `git clone` template repo;
+end group
+
+group Personalize Project
+#lightblue: Use VS Code's "Find All" (Ctrl+Shift+F) to search for `<<` and replace all placeholders with your project details;
+note right
+Includes:
+  - AUTHOR_NAME (Your Name)
+  - AUTHOR_URL (github.com/your_username)
+  - AUTHOR_GH (your_username)
+  - AUTHOR_EMAIL (your email)
+  - PROJECT_SNAKE (your project name)
+  - YEAR (current year)
+end note
+
+#lightblue: Push to origin main using [skip ci] in commit message;
+#lightblue: Set your repository NPM_TOKEN for actions;
+end group
+
+group Start Development
+#lightblue: Open a new branch;
+#lightblue: Use provided scripts for linting, formatting, testing, and building. See [[developer-workflow.puml Developer Workflow]];
+end group
+
+group Cleanup
+#lightblue: update or delete the Getting Started section in your README and the template-setup.puml diagram;
+end group
+
+@enduml
+

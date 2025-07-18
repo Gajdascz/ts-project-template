@@ -54,7 +54,15 @@ workflows and strict code quality.
 
 ### Setup
 
-1. **Create a new project from this template:**
+<details><summary>Diagram</summary>
+
+[![](https://img.plantuml.biz/plantuml/svg/TPFRJjj048Rl_HI_gDGcej1xmWLMC8S2IPI4LWYXP6CFzfRrhhK78dZwpje99Iszc_MCPxv_3YVE2-j3hV3JsAT7PTP9ugLNX3dLZHAUC2CVcYGfhGaDpic_UP9FIfQLBosHFi9aDBd1PunCGRZKd5OfAWQRc9KAT8IXalaJbhUEu2lfu3U9bZ0Qvz9VX1LwusaVor9wvCfeTcs3OAanWuHqWHPbIpGXwumMIhuI9jRyejpl58tLVimmPAul3djdaXEaIksXD_HMxSyg-UZtp_hm1ew4pIiy6elbyV4IWaEvgX8vWUMWjIgZ2Yw9jVGLNaomQBggACWBgTmWqIRYHeJaKkSg5EIE4k00wUtyOZnTZDAR3Bsx-Ez8rDH_xxkTNgF7ygkmEinD_IrMM0H7LlyTUNw1tl-zsKrwUTq5W6hcwhoJwVXxDfmlPgFqAjkuj_n_SjnbwHIzF5XBskE5sz9l6n-59JlTdGHNnTOPbYirk916S5ANk7TFia4k7y2VM4dD8wt9EL7IxbRmVdLzZ0DsqXlx0jwbnNnybOtQOOZSIwFT1yEVnUt5AJsJCatDi3kPnmrf26XQOsM5pgl1Fvl1sfzbGGLSRcNZNLjFIUrPmjVug8NlR4-kC-9Mh89K1RyEcPvmVrzq16GFrfipEcpYKPrklx-TryF31pA6YeJcvtkwq1Hnwncd84K-dWp5yuiGdUv8JMrhOelR5awpz9HtAoB6yEtj7BXumnrI8KLfHRr3SS8s-vBaDm00)](https://editor.plantuml.com/uml/TPFRJjj048Rl_HI_gDGcej1xmWLMC8S2IPI4LWYXP6CFzfRrhhK78dZwpje99Iszc_MCPxv_3YVE2-j3hV3JsAT7PTP9ugLNX3dLZHAUC2CVcYGfhGaDpic_UP9FIfQLBosHFi9aDBd1PunCGRZKd5OfAWQRc9KAT8IXalaJbhUEu2lfu3U9bZ0Qvz9VX1LwusaVor9wvCfeTcs3OAanWuHqWHPbIpGXwumMIhuI9jRyejpl58tLVimmPAul3djdaXEaIksXD_HMxSyg-UZtp_hm1ew4pIiy6elbyV4IWaEvgX8vWUMWjIgZ2Yw9jVGLNaomQBggACWBgTmWqIRYHeJaKkSg5EIE4k00wUtyOZnTZDAR3Bsx-Ez8rDH_xxkTNgF7ygkmEinD_IrMM0H7LlyTUNw1tl-zsKrwUTq5W6hcwhoJwVXxDfmlPgFqAjkuj_n_SjnbwHIzF5XBskE5sz9l6n-59JlTdGHNnTOPbYirk916S5ANk7TFia4k7y2VM4dD8wt9EL7IxbRmVdLzZ0DsqXlx0jwbnNnybOtQOOZSIwFT1yEVnUt5AJsJCatDi3kPnmrf26XQOsM5pgl1Fvl1sfzbGGLSRcNZNLjFIUrPmjVug8NlR4-kC-9Mh89K1RyEcPvmVrzq16GFrfipEcpYKPrklx-TryF31pA6YeJcvtkwq1Hnwncd84K-dWp5yuiGdUv8JMrhOelR5awpz9HtAoB6yEtj7BXumnrI8KLfHRr3SS8s-vBaDm00)
+
+</details>
+
+---
+
+**1. Create a new project from this template:**
 
 - Click the **"Use this template"** button on Github and generate a new
   repository.
@@ -71,7 +79,11 @@ OR
   git push -u origin main
   ```
 
-2. **Personalize your project:**
+**2. Personalize your project:**
+
+> **Important:** _When pushing your personalization changes to main, you must
+> include **[skip ci]** in the commit message to prevent prerelease and release
+> workflows._
 
 - Use VS Code's "Find All" (Ctrl+Shift+F) to search for << and replace all
   placeholders with your project details:
@@ -80,6 +92,8 @@ OR
   - AUTHOR_GH (your_username)
   - AUTHOR_EMAIL (your email)
   - PROJECT_SNAKE (your project name)
+  - YEAR (current year)
+- Push to origin main using [skip ci] in commit message.
 - Set your repository NPM_TOKEN for actions:
   - [Copy your npm access token for publishing.](https://docs.npmjs.com/creating-and-viewing-access-tokens)
   - Go to your project Github repository and click `settings` click
@@ -88,22 +102,27 @@ OR
   - Click the green `New repository secret`
   - Name it `NPM_TOKEN` and copy the access token under Secret.
 
-3. **Install dependencies:**
+**3. Install dependencies:**
 
-   `pnpm install`
+`pnpm install`
 
-4. Start developing:
-   - Use the provided scripts for linting, formatting, testing, and building.
-     (See the [Developer Workflow](#developer-workflow) section for best
-     practices.)
+**4. Start developing:**
 
-5. Remove or update this section: Once setup is complete, update or delete the
-   Getting Started section in your README.
+- Open a new branch for development.
+- Use the provided scripts for linting, formatting, testing, and building. (See
+  the [Developer Workflow](#developer-workflow) section for best practices.)
+
+**5. Remove or update this section:** Once setup is complete, update or delete
+the Getting Started section in your README and the
+[template-setup.puml](docs/template-setup.puml) diagram
 
 ## Committing Code
 
 This template provides a powerful, interactive commit script to automate and
 enforce best practices for every commit.
+
+> _**Tip:** direct commits to main are prevented to ensure you're always working
+> on a clean branch_
 
 ### Commit Script (`pnpm cm`)
 
@@ -129,8 +148,8 @@ pnpm cm [files...] [--changeset] [--amend]
 
 ```
 
-_Tip: Pre-commit and pre-push hooks will automatically lint, format, typecheck,
-and test your code before allowing a commit or push._
+> _**Tip**: Pre-commit and pre-push hooks will automatically lint, format,
+> typecheck, and test your code before allowing a commit or push._
 
 ### Releasing
 
@@ -154,8 +173,8 @@ quality, and release tasks:
 | `pnpm lint`                  | Lint codebase with ESLint                                               |
 | `pnpm format`                | Format codebase with Prettier                                           |
 | `pnpm typecheck`             | Run TypeScript type checking (no emit)                                  |
-| `pnpm clean:code`            | Auto-fix lint and formatting issues                                     |
-| `pnpm check:code`            | Typecheck, validate dependencies, and run tests                         |
+| `pnpm clean`                 | Auto-fix lint and formatting issues                                     |
+| `pnpm check`                 | Typecheck, validate dependencies, and run tests                         |
 | `pnpm cruise:validate`       | Validate dependency graph with dependency-cruiser                       |
 | `pnpm write:coverage-report` | Generate HTML coverage report in `docs/coverage`                        |
 | `pnpm write:docs`            | Generate coverage report and dependency graph documentation             |
@@ -183,7 +202,7 @@ quality, and release tasks:
 1. **Create a feature branch:**
 
    ```sh
-   git checkout -b dev/my-feature
+   git checkout -b my-feature
    ```
 
 2. **Make changes and stage files:**
@@ -202,7 +221,7 @@ quality, and release tasks:
 3. **Push your branch:**
 
    ```sh
-   git push origin dev/my-feature
+   git push origin my-feature
    ```
 
    - Pre-push hook runs `pnpm check` (typecheck, lint, test, dependency
@@ -224,7 +243,7 @@ quality, and release tasks:
 6. **Cleanup:**
    - Feature and changeset branches are deleted after merge.
 
-**[PUML diagram link](docs/workflow.puml)**
+**[PUML diagram link](docs/developer-workflow.puml)**
 
 ---
 
