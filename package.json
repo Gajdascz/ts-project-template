@@ -5,13 +5,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gajdascz"
+    "url": "github.com/<<AUTHOR_GH>>/<<PROJECT_SNAKE>>.git"
   },
   "keywords": [],
   "author": {
-    "name": "Nolan Gajdascz",
-    "email": "dev.gajdascz@gmail.com",
-    "url": "https://github.com/gajdascz"
+    "name": "<<AUTHOR_NAME>>",
+    "email": "<<AUTHOR_EMAIL>>",
+    "url": "<<AUTHOR_URL>>"
   },
   "type": "module",
   "devDependencies": {
@@ -27,6 +27,7 @@
     "@vitest/coverage-v8": "3.0.9",
     "@vitest/ui": "3.1.2",
     "commitizen": "^4.3.1",
+    "depcruiser-utils": "^0.2.0",
     "dependency-cruiser": "^16.10.4",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.5",
@@ -40,8 +41,7 @@
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.37.0",
-    "vitest": "^3.2.4",
-    "depcruiser-utils": "file:depcruiser-utils-0.1.0.tgz"
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "config": {

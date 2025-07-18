@@ -1,5 +1,5 @@
 name: Prerelease
-description: Push to main -> runs tests + may create Version PR
+description: Push to main -> formats, lints, and runs tests + may create Version PR
 
 on:
   push:

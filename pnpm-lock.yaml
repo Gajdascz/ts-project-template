@@ -44,8 +44,8 @@ importers:
         specifier: ^4.3.1
         version: 4.3.1(@types/node@22.16.4)(typescript@5.8.3)
       depcruiser-utils:
-        specifier: file:depcruiser-utils-0.1.0.tgz
-        version: file:depcruiser-utils-0.1.0.tgz
+        specifier: ^0.2.0
+        version: 0.2.0
       dependency-cruiser:
         specifier: ^16.10.4
         version: 16.10.4
@@ -2025,13 +2025,11 @@ packages:
       }
     engines: { node: ">= 0.4" }
 
-  depcruiser-utils@file:depcruiser-utils-0.1.0.tgz:
+  depcruiser-utils@0.2.0:
     resolution:
       {
-        integrity: sha512-Q9vaqH0Rm5sn+5eSm7isw3IeErWiRyPIud+KyXXMGD1XLlSB42SZ00As00+NyULq+ArFJXQyQSC6SvJuGWEdQw==,
-        tarball: file:depcruiser-utils-0.1.0.tgz,
+        integrity: sha512-ad8wlPTzceZ/QICGVN2pdwaBFkkYTDgsrAAUckISJ8iGJuC5DZceG+qg7RNubDOuhZNRSQf1thH3Dr9f2K1CUA==,
       }
-    version: 0.1.0
     hasBin: true
 
   dependency-cruiser@16.10.4:
@@ -6341,7 +6339,7 @@ snapshots:
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
 
-  depcruiser-utils@file:depcruiser-utils-0.1.0.tgz:
+  depcruiser-utils@0.2.0:
     dependencies:
       dependency-cruiser: 16.10.4
 

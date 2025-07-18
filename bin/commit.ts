@@ -18,7 +18,14 @@ const { args, files } = process.argv
 
 const help = () => {
   console.log(
-    `Provide files to stage and commit AND/OR the --changeset arg. If no files are provided, the --changeset arg is required.`,
+    `cm [files...] [--changeset] [--amend]
+    
+    arguments:
+      files...: List of files to commit. If no files are provided, all staged files
+                will be committed.
+      --changeset: Create a changeset for the commit. If no files are provided,
+                   this argument is required.
+      --amend: Amend the last commit instead of creating a new one.`,
   );
 };
 if (
@@ -26,6 +33,7 @@ if (
   (files.length < 1 && !args.includes("--changeset"))
 ) {
   help();
+  process.exit(0);
 }
 execSync(`pnpm typecheck`, { stdio: "inherit" });
 
@@ -39,9 +47,9 @@ try {
     execSync(`git add .changeset`, { stdio: "inherit" });
   }
   console.log("📦 Committing staged files...");
-  let commitCmd = "git commit";
-  if (AMEND.some((arg) => args.includes(arg))) commitCmd += " --amend";
-  execSync(commitCmd, { stdio: "inherit" });
+  if (AMEND.some((arg) => args.includes(arg)))
+    execSync("git commit --amend", { stdio: "inherit" });
+  else execSync("pnpm cz", { stdio: "inherit" });
 } catch (error) {
   console.error("[❌] during commit:", error.message);
   process.exit(1);
